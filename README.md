@@ -1,2 +1,2 @@
-# google-clone
-Google clone with react
+# boogle
+Just Google but with all the wrong answers
