@@ -75,7 +75,7 @@ const SearchPage = () => {
         </div>
       </div>
 
-      {term && (
+      {term && !data?.error ? (
         <div className="searchPage__results">
           <p className="searchPage__resultCount">
             About {data?.searchInformation.formattedTotalResults} results (
@@ -103,6 +103,35 @@ const SearchPage = () => {
               <p className="searchPage__resultSnippet">{item.snippet}</p>
             </div>
           ))}
+        </div>
+      ) : (
+        <div className="searchPage__results">
+          <p className="searchPage__resultCount">
+            About 0 results ( 0.2121 seconds ) for {term}
+          </p>
+          <div className="searchPage__result">
+            <a
+              className="searchPage__resultLink"
+              href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+            >
+              <img
+                className="searchPage__resultImage"
+                src="rickroll.jpg"
+                alt="rick_roll"
+              />
+            </a>
+            <a
+              className="searchPage__resultTitle"
+              href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+            >
+              <h2>Ooops, rate limit reached</h2>
+            </a>
+            <p className="searchPage__resultSnippet">
+              So, I'm kinda not paying for an unlimited rate limit from Google
+              so today's limit has exceeded. Come back tomorrow <br />
+              But can I use DuckDuckGo ?
+            </p>
+          </div>
         </div>
       )}
     </div>
