@@ -14,7 +14,7 @@ function Home() {
           <Link to="#">Store</Link>
         </div>
         <div className="home__headerRight">
-          <Link to="#">Bmail</Link>
+          <Link to="#">Wmail</Link>
           <Link to="#">Images</Link>
           <AppsIcon />
           <Avatar />
