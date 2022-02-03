@@ -13,7 +13,6 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const SearchPage = () => {
   const [{ term }] = useStateValue();
-
   // LIVE API CALL
   const { data } = useGoogleSearch(term);
 
