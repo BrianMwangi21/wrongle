@@ -23,8 +23,8 @@ function Home() {
 
       <div className="home__body">
         <img
-          src="boogle.png"
-          alt="Boogle logo"
+          src="wrongle.png"
+          alt="Wrongle logo"
         />
         <div className="home__inputContainer">
           <Search />

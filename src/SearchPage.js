@@ -22,8 +22,8 @@ const SearchPage = () => {
         <Link to="/">
           <img
             className="searchPage__logo"
-            src="boogle.png"
-            alt="Boogle logo"
+            src="wrongle.png"
+            alt="Wrongle logo"
           />
         </Link>
 
