@@ -6,7 +6,6 @@ import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { actionTypes } from "./reducer";
-import { OPENAI_API_KEY } from "./keys";
 
 function Search({ hideButtons = false }) {
   const [{ term }, dispatch] = useStateValue();
@@ -19,33 +18,21 @@ function Search({ hideButtons = false }) {
   //My Search function
   const search = (e) => {
     e.preventDefault();
-    const OpenAI = require("openai-api");
-    const openai = new OpenAI(OPENAI_API_KEY);
-    openai
-      .complete({
-        engine: "davinci",
-        prompt: e.target.value,
-        maxTokens: 5,
-        temperature: 0.9,
-        topP: 1,
-        presencePenalty: 0,
-        frequencyPenalty: 0,
-        bestOf: 1,
-        n: 1,
-        stream: false,
-        stop: ["\n", "testing"],
-      })
-      .then((response) => {
-        dispatch({
-          type: actionTypes.SET_SEARCH_TERM,
-          term: response.data.choices[0].text,
-        });
+    const { paragraph } = require('txtgen/dist/cjs/txtgen.js')
 
-        history.push("/search");
-      })
-      .catch((error) => {
-        console.log("There is an errrrrrrrr", error);
-      });
+    // Generate sentence
+    let _sentence = paragraph();
+
+    if( _sentence.length > 5 ) {
+      _sentence = _sentence.split(" ").slice(1,5).join(" ")
+    }
+
+    dispatch({
+     type: actionTypes.SET_SEARCH_TERM,
+     term: _sentence,
+    });
+
+    history.push("/search");
   };
 
   return (
@@ -63,7 +50,7 @@ function Search({ hideButtons = false }) {
       {!hideButtons ? (
         <div className="search__buttons">
           <Button type="submit" onClick={search} variant="outlined">
-            Boogle Search
+            Wrongle Search
           </Button>
           <Button variant="outlined">I'm Feeling Bucky</Button>
         </div>
@@ -75,7 +62,7 @@ function Search({ hideButtons = false }) {
             onClick={search}
             variant="outlined"
           >
-            Boogle Search
+            Wrongle Search
           </Button>
           <Button className="search__buttonHidden" variant="outlined">
             I'm Feeling Bucky
