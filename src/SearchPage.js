@@ -128,7 +128,7 @@ const SearchPage = () => {
             </a>
             <p className="searchPage__resultSnippet">
               So, I'm kinda not paying for an unlimited rate limit from Google
-              so today's limit has exceeded. Come back tomorrow <br />
+              so today's limit has exceeded. Come back tomorrow <br /><br />
               But can I use DuckDuckGo ?
             </p>
           </div>
