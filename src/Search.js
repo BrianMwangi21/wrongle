@@ -65,7 +65,7 @@ function Search({ hideButtons = false }) {
             Wrongle Search
           </Button>
           <Button className="search__buttonHidden" variant="outlined">
-            I'm Feeling Bucky
+            I'm Feeling Wrucky
           </Button>
         </div>
       )}
