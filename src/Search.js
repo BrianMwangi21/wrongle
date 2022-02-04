@@ -52,7 +52,7 @@ function Search({ hideButtons = false }) {
           <Button type="submit" onClick={search} variant="outlined">
             Wrongle Search
           </Button>
-          <Button variant="outlined">I'm Feeling Bucky</Button>
+          <Button variant="outlined">I'm Feeling Wrucky</Button>
         </div>
       ) : (
         <div className="search__buttons">
