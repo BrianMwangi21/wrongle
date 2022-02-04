@@ -83,7 +83,12 @@ const SearchPage = () => {
           </p>
           {data?.items.map((item, index) => (
             <div className="searchPage__result" key={index}>
-              <a className="searchPage__resultLink" href={item.link}>
+              <a
+                className="searchPage__resultLink"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {item.pagemap?.cse_image?.length > 0 &&
                   item.pagemap?.cse_image[0]?.src && (
                     <img
@@ -97,7 +102,12 @@ const SearchPage = () => {
                   )}
                 {item.displayLink} ᐁ
               </a>
-              <a className="searchPage__resultTitle" href={item.link}>
+              <a
+                className="searchPage__resultTitle"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <h2>{item.title}</h2>
               </a>
               <p className="searchPage__resultSnippet">{item.snippet}</p>
@@ -113,6 +123,8 @@ const SearchPage = () => {
             <a
               className="searchPage__resultLink"
               href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 className="searchPage__resultImage"
@@ -123,12 +135,15 @@ const SearchPage = () => {
             <a
               className="searchPage__resultTitle"
               href="https://www.youtube.com/watch?v=xvFZjo5PgG0"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <h2>Ooops, rate limit reached</h2>
             </a>
             <p className="searchPage__resultSnippet">
               So, I'm kinda not paying for an unlimited rate limit from Google
-              so today's limit has exceeded. Come back tomorrow <br /><br />
+              so today's limit has exceeded. Come back tomorrow <br />
+              <br />
               But can I use DuckDuckGo ?
             </p>
           </div>
