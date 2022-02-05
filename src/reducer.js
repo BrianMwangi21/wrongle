@@ -1,5 +1,6 @@
 export const initialState = {
   term: null,
+  actual: null,
 };
 
 export const actionTypes = {
@@ -12,6 +13,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         term: action.term,
+        actual: action.actual,
       };
     default:
       return state;

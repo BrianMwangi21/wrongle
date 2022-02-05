@@ -29,7 +29,8 @@ function Search({ hideButtons = false }) {
 
     dispatch({
      type: actionTypes.SET_SEARCH_TERM,
-     term: _sentence,
+     term: input,
+      actual: _sentence
     });
 
     history.push("/search");

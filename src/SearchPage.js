@@ -12,9 +12,9 @@ import RoomIcon from "@material-ui/icons/Room";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const SearchPage = () => {
-  const [{ term }] = useStateValue();
+  const [{ term, actual }] = useStateValue();
   // LIVE API CALL
-  const { data } = useGoogleSearch(term);
+  const { data } = useGoogleSearch(actual);
 
   return (
     <div className="searchPage">
